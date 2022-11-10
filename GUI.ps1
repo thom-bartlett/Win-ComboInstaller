@@ -39,7 +39,6 @@ param ($CurrentDir)
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="74"/>
@@ -74,9 +73,6 @@ param ($CurrentDir)
                     <Label Grid.Column="1" Content="Falcon" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="22"/>
                     <ProgressBar x:Name="Progress_Falcon" Grid.Column="2" Height="20" Margin="165,0,-205,0" VerticalAlignment="Center" Grid.Row="6"/>
                     <Line Grid.Row="6" Stroke="LightGray" StrokeThickness="1" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Stretch="Uniform" X1="0" X2="120" Margin="10,0,-152,0"></Line>
-                    <Image HorizontalAlignment="Center" Height="40" Grid.Row="7" VerticalAlignment="Center" Width="42" Source="$CurrentDir/Nextiva.png"/>
-                    <Label Grid.Column="1" Content="Nextiva" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="22"/>
-                    <ProgressBar x:Name="Progress_Nextiva" Grid.Column="2" Height="20" Margin="165,0,-205,0" VerticalAlignment="Center" Grid.Row="7"/>
                     <Label x:Name="Progress_Chrome_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
                     <Label x:Name="Progress_Drive_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Row="1"/>
                     <Label x:Name="Progress_Firefox_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Row="2"/>
@@ -84,7 +80,6 @@ param ($CurrentDir)
                     <Label x:Name="Progress_Splashtop_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Row="4"/>
                     <Label x:Name="Progress_Evernote_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Row="5"/>
                     <Label x:Name="Progress_Falcon_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Row="6"/>
-                    <Label x:Name="Progress_Nextiva_Label" Grid.Column="2" Content="Not started" Height="28" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Margin="165,0,-205,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Row="7"/>
                 </Grid>
             </ScrollViewer>
         </Border>
@@ -116,8 +111,6 @@ $syncHash.Evernote = $syncHash.Window.FindName('Progress_Evernote')
 $syncHash.EvernoteLabel = $syncHash.Window.FindName('Progress_Evernote_Label')
 $syncHash.Falcon = $syncHash.Window.FindName('Progress_Falcon')
 $syncHash.FalconLabel = $syncHash.Window.FindName('Progress_Falcon_Label')
-$syncHash.Nextiva = $syncHash.Window.FindName('Progress_Nextiva')
-$syncHash.NextivaLabel = $syncHash.Window.FindName('Progress_Nextiva_Label')
 $syncHash.Description = $syncHash.Window.FindName('App_Description')
 $syncHash.OverallProgress = $syncHash.Window.FindName('Overall_Progress')
 $syncHash.LargeIcon = $syncHash.Window.FindName('Large_Icon')
@@ -576,7 +569,6 @@ function main{
         'Splashtop' = 'Splashtop enables users to remotely access or remotely support computers from desktop and mobile devices.'
         'Evernote' = 'Evernote is a powerful tool that can help executives, entrepreneurs and creative people capture and arrange their ideas.'
         'Falcon' = 'Falcon stops breaches via a unified set of cloud-delivered technologies that prevent all types of attacks - including malware and much more.'
-        'Nextiva' = 'Nextiva is a Connected Communications company that helps businesses grow faster.'
     }
     $TotalApps = $Apps.Keys.Count
     $Processed = 0
